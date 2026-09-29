@@ -1,0 +1,155 @@
+:root {
+    --bg-dark: #0b1320;
+    --card-bg: #121c2e;
+    --accent-color: #8bb3e8; /* Tono azul claro elegante */
+    --accent-gold: #d4af37;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #e0e6ed;
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+}
+
+.max-w-600 {
+    max-width: 600px;
+}
+
+/* Tipografías y Encabezados */
+.sub-header {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    display: block;
+}
+
+.guest-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+.couple-names {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.event-date {
+    letter-spacing: 4px;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    margin: 50px auto;
+    max-width: 80%;
+}
+
+/* Tarjetas */
+.card-dark {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.countdown-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 15px 5px;
+    border-radius: 8px;
+}
+
+.event-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    height: 100%;
+}
+
+.event-card.border-accent {
+    border-color: rgba(139, 179, 232, 0.4);
+}
+
+.time-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: rgba(139, 179, 232, 0.1);
+    color: var(--accent-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+.passes-card {
+    background-color: var(--card-bg);
+    border: 1px dashed var(--accent-color);
+}
+
+/* Galería */
+.gallery-img {
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
+    filter: brightness(0.85);
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    filter: brightness(1);
+}
+
+/* Formulario */
+.custom-input {
+    background-color: #0b1320;
+    border: 1px solid var(--border-color);
+    color: #ffffff;
+}
+
+.custom-input:focus {
+    background-color: #0b1320;
+    color: #ffffff;
+    border-color: var(--accent-color);
+    box-shadow: none;
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: #0b1320;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-accent:hover {
+    background-color: #729ecf;
+    color: #0b1320;
+}
+
+.quote {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}

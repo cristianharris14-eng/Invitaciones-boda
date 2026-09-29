@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Invitaciones</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles-admin.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1"><i class="bi bi-envelope-heart me-2"></i>Gestor de Invitaciones</span>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+
+        <!-- Métricas Rápidas -->
+        <div class="row g-3 mb-4">
+            <div class="col-6 col-md-3">
+                <div class="card card-metric bg-white border-0 shadow-sm p-3">
+                    <span class="text-muted small">Total Invitaciones</span>
+                    <h3 class="fw-bold mb-0" id="metric-total">0</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card card-metric bg-white border-0 shadow-sm p-3 border-start border-success border-4">
+                    <span class="text-muted small">Confirmados</span>
+                    <h3 class="fw-bold text-success mb-0" id="metric-confirmados">0</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card card-metric bg-white border-0 shadow-sm p-3 border-start border-primary border-4">
+                    <span class="text-muted small">Pases Asistentes</span>
+                    <h3 class="fw-bold text-primary mb-0" id="metric-pases">0</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card card-metric bg-white border-0 shadow-sm p-3 border-start border-info border-4">
+                    <span class="text-muted small">Vistas Totales</span>
+                    <h3 class="fw-bold text-info mb-0" id="metric-vistas">0</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario para Agregar Invitado -->
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title mb-3"><i class="bi bi-person-plus me-2"></i>Nuevo Invitado</h5>
+                <form id="form-nuevo-invitado" class="row g-3 align-items-end">
+                    <div class="col-md-5">
+                        <label class="form-label small fw-bold">Nombre o Familia</label>
+                        <input type="text" id="input-nombre" class="form-control" placeholder="Ej: Familia Pérez u Omar Benítez" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label small fw-bold">Pases Asignados</label>
+                        <input type="number" id="input-pases" class="form-control" min="1" value="2" required>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary w-100"><i class="bi bi-plus-lg me-1"></i> Generar Invitación</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabla de Invitados -->
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white py-3">
+                <h5 class="card-title mb-0"><i class="bi bi-people me-2"></i>Lista de Invitados</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Invitado</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-center">Pases (Conf / Asign)</th>
+                            <th class="text-center">Vistas</th>
+                            <th class="text-end">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-invitados">
+                        <!-- Carga dinámica con JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Supabase JS Client (v2) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Tu archivo JS -->
+    <script src="admin.js"></script>
+</body>
+</html>
